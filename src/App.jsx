@@ -1,5 +1,6 @@
 import Header from "./components/Header.jsx";
 import UserInput from "./components/UserInput.jsx";
+import Result from "./components/Result.jsx";
 import {useState} from "react";
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
       <>
         <Header></Header>
         <UserInput onChangeInput={handleInputChange} investment={investment}></UserInput>
-        {/*<Results></Results>*/}
+        <Result userInput={investment}></Result>
       </>
   )
 }
