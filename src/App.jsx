@@ -13,7 +13,7 @@ function App() {
 
   function handleInputChange(inputIdentifier, newValue) {
     setInvestment((prevValue) => {
-      return {...prevValue, [inputIdentifier]: newValue}
+      return {...prevValue, [inputIdentifier]: +newValue}
     });
     console.log(investment);
   }
