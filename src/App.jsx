@@ -15,7 +15,6 @@ function App() {
     setInvestment((prevValue) => {
       return {...prevValue, [inputIdentifier]: +newValue}
     });
-    console.log(investment);
   }
 
   return (
