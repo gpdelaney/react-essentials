@@ -29,7 +29,7 @@ export default function UserInput({onChangeInput, investment}) {
         <input type="number" value={investment.duration} required
                onChange={(event) => {
                  onChangeInput('duration', event.target.value);
-               }}/>
+               }} min="1"/>
       </p>
     </div>
   </section>

@@ -1,8 +1,9 @@
 import {calculateInvestmentResults, formatter} from "../util/investment.js";
 
-export default function Result({userInput}){
+export default function Result({userInput}) {
   const annualData = calculateInvestmentResults(userInput);
-  const initialInvestment = annualData[0].valueEndOfYear - annualData[0].interest - annualData[0].annualInvestment;
+  const initialInvestment = annualData[0].valueEndOfYear
+      - annualData[0].interest - annualData[0].annualInvestment;
   return <table id="result">
     <thead>
     <tr>
@@ -24,10 +25,11 @@ export default function Result({userInput}){
     </tr>
     </thead>
     <tbody>
-      {annualData.map((yearData) =>  {
-        const totalYearInvestment = yearData.valueEndOfYear - yearData.annualInvestment * yearData.year - initialInvestment;
-        const totalAmountInterest = yearData.valueEndOfYear - totalYearInvestment;
-        return (
+    {annualData.map((yearData) => {
+      const totalYearInvestment = yearData.valueEndOfYear
+          - yearData.annualInvestment * yearData.year - initialInvestment;
+      const totalAmountInterest = yearData.valueEndOfYear - totalYearInvestment;
+      return (
           <tr key={yearData.year}>
             <td>{yearData.year}</td>
             <td>{formatter.format(yearData.valueEndOfYear)}</td>
@@ -36,7 +38,7 @@ export default function Result({userInput}){
             <td>{formatter.format(totalAmountInterest)}</td>
           </tr>
       )
-      })}
+    })}
     </tbody>
   </table>
 }
